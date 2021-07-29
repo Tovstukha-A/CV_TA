@@ -15,6 +15,13 @@ data.skills.forEach(item => {
 });
 document.querySelector('.skills-list').innerHTML = skillsData;
 
+// courses ==================
+
+document.querySelector('.courses-list').innerHTML += `<li><a href="${data.courses_1}">HTML для JavaScript разработчиков</a></li>`
+document.querySelector('.courses-list').innerHTML += `<li><a href="${data.courses_2}">JavaScript v.2.0</a></li>`
+document.querySelector('.courses-list').innerHTML += `<li><a href="${data.courses_3}">Методы массивов JavaScript</a></li>`
+document.querySelector('.courses-list').innerHTML += `<li><a href="${data.courses_4}">React JS</a></li>`
+
 // education ==================
 
 let educationData = '';
@@ -25,60 +32,25 @@ document.querySelector('.education-list').innerHTML = educationData;
 
 // Achievements ====================
 
-let achievementsData = '';
-data.achievements.forEach(item => {
-    achievementsData += `<li>${item},</li>`;
-});
-document.querySelector('.achievements-list').innerHTML = achievementsData;
+document.querySelector('.achievements-list').innerHTML = data.achievements;
 
 // Profile ===================
 
 document.getElementById('my-name').innerHTML = `${data.first_name} <span class="color-grey">${data.last_name}</span>`;
 document.getElementById('job-title').textContent = data.job_title;
 document.querySelector('.profile-data').textContent = data.profile;
+document.querySelector('.web_dev-data').textContent = data.web_dev;
 
-// Expirience_1 ================
+// Expirience ================
 
-let expdescr1 = '';
-experience1.description.forEach(item => {
-    expdescr1 += `<li>${item},</li>`;
+let expirienceData = '';
+experience.forEach(item => {
+    expirienceData += `<section class="mb-5">`;
+    expirienceData += ` <h4 class="company-name mb-2">${item.company} - ${item.city}, <i>${item.from} - ${item.to}</i></h4>`;
+    expirienceData += `<h5>${item.position}</h5>`;
+    expirienceData += `<p>${item.description}</p>`;
+    expirienceData += `</section>`;
 });
-
-document.querySelector('.experience-list-1').innerHTML += ` <h4 class="company-name mb-2">${experience1.company} - ${experience1.city}, <i>${experience1.from} - ${experience1.to}</i></h4>`;
-document.querySelector('.experience-list-1').innerHTML += `<h5>${experience1.position}</h5>`;
-document.querySelector('.experience-list-1').innerHTML += `<li>${expdescr1}</li>`;
-
-// Expirience_2 ================
-
-let expdescr2 = '';
-experience2.description.forEach(item => {
-    expdescr2 += `<li>${item},</li>`;
-});
-
-document.querySelector('.experience-list-2').innerHTML += ` <h4 class="company-name mb-2">${experience2.company} - ${experience2.city}, <i>${experience2.from} - ${experience2.to}</i></h4>`;
-document.querySelector('.experience-list-2').innerHTML += `<h5>${experience2.position}</h5>`;
-document.querySelector('.experience-list-2').innerHTML += `<li>${expdescr2}</li>`;
-
-// Expirience_3 ================
-
-let expdescr3 = '';
-experience3.description.forEach(item => {
-    expdescr3 += `<li>${item},</li>`;
-});
-
-document.querySelector('.experience-list-3').innerHTML += ` <h4 class="company-name mb-2">${experience3.company} - ${experience3.city}, <i>${experience3.from} - ${experience3.to}</i></h4>`;
-document.querySelector('.experience-list-3').innerHTML += `<h5>${experience3.position}</h5>`;
-document.querySelector('.experience-list-3').innerHTML += `<li>${expdescr3}</li>`;
-
-// Expirience_4 ================
-
-let expdescr4 = '';
-experience4.description.forEach(item => {
-    expdescr4 += `<li>${item},</li>`;
-});
-
-document.querySelector('.experience-list-4').innerHTML += ` <h4 class="company-name mb-2">${experience4.company} - ${experience4.city}, <i>${experience4.from} - ${experience4.to}</i></h4>`;
-document.querySelector('.experience-list-4').innerHTML += `<h5>${experience4.position}</h5>`;
-document.querySelector('.experience-list-4').innerHTML += `<li>${expdescr4}</li>`;
+document.querySelector('.experience-list').innerHTML = expirienceData;
 
 $("ul li:empty").remove();
